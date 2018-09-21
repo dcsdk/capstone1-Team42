@@ -118,10 +118,10 @@ public class TheApp extends PApplet {
 	public void drawPaddle() {
 	  paddle.draw();
 	    if (keyPressed) {
-	        if (key == 'x' || key == 'X') {
-	      paddle.blockX++;}
-	           if (key == 'y' || key == 'Y') {
-	      paddle.blockX--;
+	        if ((keyCode == RIGHT || key == 'd') && (paddle.blockX<(widthD-paddleWidth))) {
+	      paddle.blockX=paddle.blockX+8;}
+	        else if ((keyCode == LEFT || key == 'a') && (paddle.blockX>0)) {
+	      paddle.blockX=paddle.blockX-8;
 	    }
 	  }
 	  
