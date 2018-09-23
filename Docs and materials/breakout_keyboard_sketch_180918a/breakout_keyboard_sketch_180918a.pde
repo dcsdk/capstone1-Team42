@@ -2,7 +2,7 @@
 int widthD= 400;
 int HeightD= 600;
 int score=0;
-int lives=999;
+int lives=5;
 String message;
 
 //Bricks
