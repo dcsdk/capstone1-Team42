@@ -11,7 +11,7 @@ public class GameController implements Controller{
 	}
 	
 	public void handleEvent() {
-		
+		//handle event
 	};	
 	
 }
