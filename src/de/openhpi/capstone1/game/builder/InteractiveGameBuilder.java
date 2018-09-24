@@ -7,6 +7,7 @@ public class InteractiveGameBuilder {
 		InteractiveGame iGame = null;
 	
 		//build components
+		System.out.println("Instantiating game object");
 		iGame = new InteractiveGame();
 		
 		iGame.addModel();

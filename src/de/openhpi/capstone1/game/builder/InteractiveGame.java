@@ -13,19 +13,22 @@ public class InteractiveGame extends InteractiveComponent {
 	public InteractiveGame() {}
 	
 	public void addModel() {
+		System.out.println("Adding model to game object");
 		model = new Model();
 	}
 	
 	public void createViews(PApplet applet) {
-	views = new AbstractView[3];
-	/*Views don't exist yet
-	views[0] = new PaddleView(applet, model);
-	views[1] = new BallView(applet, model);
-	views[2] = new BlockView(applet, model);
-	*/
+		System.out.println("Adding views to game object");
+		views = new AbstractView[3];
+		/*Views don't exist yet
+		views[0] = new PaddleView(applet, model);
+		views[1] = new BallView(applet, model);
+		views[2] = new BlockView(applet, model);
+		 */
 	}
 	
 	public void addController() {
+		System.out.println("Adding controller to game object");
 		gameController = new GameController(model);
 	}
 	
