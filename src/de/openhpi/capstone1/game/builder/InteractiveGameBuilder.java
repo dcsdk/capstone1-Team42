@@ -2,11 +2,19 @@ package de.openhpi.capstone1.game.builder;
 
 import processing.core.PApplet;
 
-public class InteractiveComponentBuilder {
-	public static InteractiveComponent create(PApplet applet, String type) {
-		InteractiveComponent component = null;
-		//TODO build components
+public class InteractiveGameBuilder {
+	public static InteractiveGame create(PApplet applet) {
+		InteractiveGame iGame = null;
+	
+		//build components
+		iGame = new InteractiveGame();
 		
-		return component;
+		iGame.addModel();
+		
+		iGame.createViews(applet);
+		
+		iGame.addController();
+		
+		return iGame;
 	}
 }

@@ -3,16 +3,14 @@ package de.openhpi.capstone1.game.starter;
 
 import java.util.ArrayList;
 
-import de.openhpi.capstone1.game.builder.InteractiveComponent;
-import de.openhpi.capstone1.game.builder.InteractiveComponentBuilder;
+import de.openhpi.capstone1.game.builder.InteractiveGame;
+import de.openhpi.capstone1.game.builder.InteractiveGameBuilder;
 import processing.core.PApplet;
 
 public class TheApp extends PApplet {
 	
-/*Working on the implementation. Skov.
-	InteractiveComponent interactiveGame;
-*/
-	
+	InteractiveGame interactiveGame;
+
 	//Display window size
 	int widthD= 400;
 	int HeightD= 600;
@@ -65,10 +63,8 @@ public class TheApp extends PApplet {
 			
 		  background(255); 
 		  
-/*Working on the implementation. Skov.
-		  //Build game components
-		  interactiveGame = InteractiveGameBuilder();
-*/
+		  interactiveGame = InteractiveGameBuilder.create(this);
+
 		  setupBricks();		
 	}
 
