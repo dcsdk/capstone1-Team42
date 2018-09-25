@@ -50,7 +50,7 @@ public class TheApp extends PApplet {
 	@Override
 	  public void settings() {  size(400,600); }
 	  static public void main(String[] passedArgs) {
-	    String[] appletArgs = new String[] { "breakout_keyboard_sketch_180918a" };
+	    String[] appletArgs = new String[] { "breakout_keyboard_sketch_180918a" }; // What is this??
 	    if (passedArgs != null) {
 	      PApplet.main(concat(appletArgs, passedArgs));
 	    } else {
