@@ -13,7 +13,7 @@ public class TheApp extends PApplet {
 
 	//Display window size
 	int widthD= 400;
-	int HeightD= 600;
+	int heightD= 600;
 	int score=0;
 	int lives=5;
 	String message;
@@ -33,7 +33,7 @@ public class TheApp extends PApplet {
 	//Ball
 	int ballWidth= 16;
 	float ballStartX=random(widthD); 
-	float ballStartY=HeightD/2;
+	float ballStartY=heightD/2;
 	int ballColor= color(255, 0, 0);
 	boolean hasLost= false;
 	boolean hasWon= false;
@@ -41,16 +41,16 @@ public class TheApp extends PApplet {
 
 	//Paddle
 	int paddleX= widthD/2;
-	int paddleY= HeightD-50;
+	int paddleY= heightD-50;
 	int paddleHeight= 20;
 	int paddleWidth= 70;
 	int paddleColor= color(255, 0, 255);
 	Block paddle= new Block(paddleX, paddleY, paddleWidth, paddleHeight, paddleColor);
 
 	@Override
-	  public void settings() {  size(400,600); }
+	  public void settings() {  size(widthD,heightD); }
 	  static public void main(String[] passedArgs) {
-	    String[] appletArgs = new String[] { "breakout_keyboard_sketch_180918a" }; // What is this??
+	    String[] appletArgs = new String[] { "Team#42 breakout based on sketch_180918a" }; 
 	    if (passedArgs != null) {
 	      PApplet.main(concat(appletArgs, passedArgs));
 	    } else {
@@ -314,7 +314,7 @@ public class TheApp extends PApplet {
 	  }
 	  
 	  //returns a boolean if it collides with a ball.
-	 // It automatically changes the speed of the ball
+	 // It automatically changes the direction of the ball
 	  public boolean collidesWith(Ball b) {
 	    //collides with bottom of block
 	    if ((b.ballX+b.ballWidth/4>blockX && b.ballX-b.ballWidth/4<blockX+blockWidth)
