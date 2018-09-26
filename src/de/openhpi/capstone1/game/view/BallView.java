@@ -1,7 +1,7 @@
 
 package de.openhpi.capstone1.game.view;
 
-import de.openhpi.capstone1.game.model.*;
+import de.openhpi.capstone1.game.model.Model;
 
 import processing.core.PApplet;
 
