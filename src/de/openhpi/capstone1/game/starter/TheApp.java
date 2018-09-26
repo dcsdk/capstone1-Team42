@@ -48,23 +48,15 @@ public class TheApp extends PApplet {
 	Block paddle= new Block(paddleX, paddleY, paddleWidth, paddleHeight, paddleColor);
 
 	@Override
-	  public void settings() {  size(400,600); }
-	  static public void main(String[] passedArgs) {
-	    String[] appletArgs = new String[] { "breakout_keyboard_sketch_180918a" }; // What is this??
-	    if (passedArgs != null) {
-	      PApplet.main(concat(appletArgs, passedArgs));
-	    } else {
-	      PApplet.main(appletArgs);
-	    }
-	  }
+	  public void settings() {
+		size(400,600); 
+		}
+	
 
 	@Override
 	public void setup() {  // setup() runs once
-			
-		  background(255); 
-		  
+		  frameRate(60);	  
 		  interactiveGame = InteractiveGameBuilder.create(this);
-
 		  setupBricks();		
 	}
 
