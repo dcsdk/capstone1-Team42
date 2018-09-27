@@ -1,6 +1,6 @@
 package de.openhpi.capstone1.game.builder;
 
-
+import de.openhpi.capstone1.game.model.*;
 import processing.core.PApplet;
 
 import de.openhpi.capstone1.game.view.*;
@@ -12,12 +12,18 @@ public class InteractiveGame extends InteractiveComponent {
 	
 	GameController gameController;
 	Model model;
+	Paddle paddle;
+	Brick brick;
+	Ball ball;
 	
 	public InteractiveGame() {}
 	
 	public void addModel() {
 		System.out.println("Adding model to game object");
-		model = new Model();
+		paddle = new Paddle();
+		brick = new Brick();
+		ball = new Ball ();
+		
 	}
 	
 	public void createViews(PApplet applet) {
@@ -26,9 +32,9 @@ public class InteractiveGame extends InteractiveComponent {
 
 		//Views don't exist yet
 
-		views[0] = new PaddleView(applet, model);
-		views[1] = new BallView(applet, model);
-		views[2] = new BlockView(applet, model);
+		views[0] = new PaddleView(applet, paddle);
+		views[1] = new BallView(applet, ball);
+		views[2] = new BlockView(applet, brick);
 
 	}
 	

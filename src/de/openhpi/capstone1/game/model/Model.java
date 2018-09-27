@@ -2,7 +2,7 @@ package de.openhpi.capstone1.game.model;
 
   
 
-public abstract class Model {
+public  class Model {
 
 	private int action = 0;
 	
