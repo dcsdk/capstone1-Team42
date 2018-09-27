@@ -1,5 +1,6 @@
 package de.openhpi.capstone1.game.builder;
 
+
 import processing.core.PApplet;
 
 public interface Builder {
