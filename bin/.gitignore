@@ -21,11 +21,4 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/de/
-/model.di
-/model.notation
-/model.uml
-/capstone1-TheProject.di
-/capstone1-TheProject.notation
-/capstone1-TheProject.uml
-/Docs and materials/
+/bin/
