@@ -48,15 +48,8 @@ public class TheApp extends PApplet {
 	Block paddle= new Block(paddleX, paddleY, paddleWidth, paddleHeight, paddleColor);
 
 	@Override
-	  public void settings() {  size(widthD,heightD); }
-	  static public void main(String[] passedArgs) {
-	    String[] appletArgs = new String[] { "Team#42 breakout based on sketch_180918a" }; 
-	    if (passedArgs != null) {
-	      PApplet.main(concat(appletArgs, passedArgs));
-	    } else {
-	      PApplet.main(appletArgs);
-	    }
-	  }
+	public void settings() {  size(widthD,heightD); }
+
 
 	@Override
 	public void setup() {  // setup() runs once
