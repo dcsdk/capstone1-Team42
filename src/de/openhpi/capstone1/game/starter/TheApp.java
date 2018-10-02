@@ -12,12 +12,14 @@ public class TheApp extends PApplet {
 	InteractiveGame interactiveGame;
 
 	//Display window size
-	int widthD= 400;
-	int heightD= 600;
+	public static int widthD = 400;
+	public static int heightD = 600;
+/*	
 	int score=0;
 	int lives=5;
 	String message;
-
+*/
+/*
 	//Bricks
 	float brickX=0;
 	int spaceBetweenBricks= 5;
@@ -29,16 +31,12 @@ public class TheApp extends PApplet {
 	int brickColors[]= {color(255, 0,0), color(255, 183, 0), color(255,255,0), color(0,255,0), color(0,0,255), color(156,0,255), color(255, 0,0), color(255,183, 0), color(255,255,0), color(0,255,0)};
 	int brickColor= color(255, 255, 0);
 	ArrayList<Block> BasketOfBricks= new ArrayList<Block>();
-
-	//Ball
-	int ballWidth= 16;
-	float ballStartX=random(widthD); 
-	float ballStartY=heightD/2;
-	int ballColor= color(255, 0, 0);
+*/
+/*
 	boolean hasLost= false;
 	boolean hasWon= false;
-	Ball Moe= new Ball(ballStartX, ballStartY, ballWidth, ballColor);
-
+*/
+/*
 	//Paddle
 	int paddleX= widthD/2;
 	int paddleY= heightD-50;
@@ -46,7 +44,7 @@ public class TheApp extends PApplet {
 	int paddleWidth= 70;
 	int paddleColor= color(255, 0, 255);
 	Block paddle= new Block(paddleX, paddleY, paddleWidth, paddleHeight, paddleColor);
-
+*/
 	@Override
 	public void settings() {  size(widthD,heightD); }
 
@@ -54,22 +52,27 @@ public class TheApp extends PApplet {
 	@Override
 	public void setup() {  // setup() runs once
 			
-		  background(255); 
+		  frameRate(60); 
 		  
 		  interactiveGame = InteractiveGameBuilder.create(this);
-
+/*
 		  setupBricks();		
+*/		  
 	}
 
 	@Override
 	public void draw() {  // draw() loops forever, until stopped
 	    background(255); 
+	    interactiveGame.update();
+	    interactiveGame.drawGameObjects();
+/*	    
 	    drawBricks();
 	    if(!hasLost&&!hasWon) drawBall();
 	    drawPaddle();
 	    updateScore(false);
 	    drawLivesText();
-	    if(lives==0) drawLose();		
+	    if(lives==0) drawLose();	
+*/	    	
 	}
 	
 	//Add further user interaction as necessary
@@ -77,7 +80,7 @@ public class TheApp extends PApplet {
 	public void mouseClicked() {
 
 	}
-	
+/*	
 	//initialize all the bricks
 	public void setupBricks() {
 	  
@@ -90,7 +93,8 @@ public class TheApp extends PApplet {
 	    }
 	  }
 	}
-
+*/
+/*	
 	//draw the bricks
 	public void drawBricks() {  
 	  for(int brickNumber= BasketOfBricks.size()-1; brickNumber>=0; brickNumber--) {
@@ -102,19 +106,10 @@ public class TheApp extends PApplet {
 	    }
 	  }
 	}
-
-	//draw the ball
-	public void drawBall() {
-	    Moe.draw();
-	    Moe.update();
-	    if(Moe.checkWallCollision()) {
-	      lives--;
-	      Moe.move(width/2, height/2);
-	    }
-	}
+*/
 
 
-
+/*
 	//draw the paddle and have it move with the mouse
 	public void drawPaddle() {
 	  paddle.draw();
@@ -129,11 +124,11 @@ public class TheApp extends PApplet {
 	//  paddle.blockX=mouseX; //<>//
 	  paddle.collidesWith(Moe);
 	}
+*/
 
 
 
-
-
+/*
 	public void displayText(String message, int x, int y, boolean isCentered) {
 	  fill(0);
 	  textSize(32);
@@ -146,13 +141,15 @@ public class TheApp extends PApplet {
 	    int textY= y;
 	    text(name, textX, textY);
 	}
-	  
+*/
+/*
 	public void drawLose() {
 	  String message="You lose!";
 	    displayText(message, 0, height/2, true);
 	    hasLost=true;
 	  }
-	  
+*/
+/*	
 	public void updateScore(boolean isNew) {
 	  if (isNew) score+=10;
 	  message="Score:"+score;
@@ -162,7 +159,8 @@ public class TheApp extends PApplet {
 	    hasWon=true;
 	  }
 	}
-
+*/
+/*	
 	public void checkLives() {
 	  if(Moe.ballY+Moe.ballWidth==height) {
 	    lives--;
@@ -175,64 +173,8 @@ public class TheApp extends PApplet {
 	  message="Lives: " + lives;
 	  displayText(message,((int)(width-textWidth(message))),height-2,false);
 	}
-	/*******Ball Class**************/
-	/* The default class has the following default modes
-	 * Constructor function: to create a new ball call:
-	               Ball ballName= new Ball(x, y, Width, Color);
-	 * ballName.draw();  //this draws the ball
-	 * ballName.update(); //this moves the ball
-	 * ballName.checkWallCollision(); //
-	 */
-	class Ball {
-	  float ballX;
-	  float ballY;
-	  float ballWidth;
-	  int ballColor;
-	  float speedY= 3.5f;
-	  float speedX= 3.5f;
-	  
-	  //This is constructor known as the function that initiates
-	  Ball(float x, float y, int Width, int Color) {
-	     ballX= x;
-	     ballY= y;
-	     ballWidth= Width;
-	     ballColor= Color; 
-	  }
-	   //this draws the ball on the screen
-	  public void draw() {
-	    noStroke();
-	    fill(ballColor);
-	    ellipse(ballX, ballY, ballWidth, ballWidth);
-	  }
-	  
-	  
-	  //this changes the ball to the speed;
-	  public void update() {
-	    ballX+=speedX;
-	    ballY+=speedY;
-	  }
-	  public void move(int X, int Y) {
-	    ballX = X;
-	    ballY = Y;
-	    speedY= 4;
-	    speedX= 4;
-	  }
-	  
-	  //this does the bounce
-	  public boolean checkWallCollision() {
-	    if (ballX>width-ballWidth/2) {
-	        speedX=-abs(speedX); 
-	    } else if (ballX<ballWidth/2) {
-	       speedX=abs(speedX);
-	    } if (ballY>height-ballWidth/2) { 
-	        speedY=-abs(speedY);
-	        return true; 
-	    } else if (ballY<ballWidth/2) {
-	        speedY= abs(speedY);
-	    }
-	    return false;
-	  }
-	}
+*/	
+
 	/*******Block Class**************/
 	/* The default class has the following default modes
 	 * Constructor function: to create a new block call:
@@ -244,6 +186,7 @@ public class TheApp extends PApplet {
 	 * blockName.setHits(int numberOfHits); //allows you to set the number of times a brick needs to hit
 	 * blockName.getHits(); //tells you how times left the brick can be hit
 	 */
+/*	
 	class Block {
 	  float blockX;
 	  float blockY;
@@ -347,5 +290,5 @@ public class TheApp extends PApplet {
 	  return false;
 	  }
 	}
-	
+*/	
 }

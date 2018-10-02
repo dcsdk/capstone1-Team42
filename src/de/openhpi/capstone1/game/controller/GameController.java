@@ -4,10 +4,10 @@ import de.openhpi.capstone1.game.model.*;
 
 public class GameController implements Controller{
 
-	Model model;
+	Paddle paddle;
 	
-	public GameController(Model model) { 
-		this.model = model;
+	public GameController(Paddle paddle) { 
+		this.paddle = paddle;
 	}
 	
 	public void handleEvent() {
