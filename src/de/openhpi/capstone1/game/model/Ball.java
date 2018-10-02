@@ -17,16 +17,16 @@ public class Ball extends PApplet {
 	int widthD = TheApp.widthD;
 	int heightD = TheApp.heightD;
 	
-	int ballWidthStart = 16;
-	float ballStartX = random(widthD); 
-	float ballStartY=heightD/2;
+	private int ballWidthStart = 16;
+	private float ballStartX = widthD/2; 
+	private float ballStartY=heightD/2;
 	
-	float speedY= 3.5f;
-	float speedX= 3.5f;
+	private float speedY= 3.5f;
+	private float speedX= 3.5f;
 
-    float ballX = ballStartX;
-    float ballY = ballStartY;
-    float ballWidth = (float)ballWidthStart;
+	private float ballX = ballStartX;
+	private float ballY = ballStartY;
+	private float ballWidth = (float)ballWidthStart;
     private int ballColor = color(255, 0, 0);  
  
 
@@ -58,11 +58,11 @@ public class Ball extends PApplet {
 
   
   //this changes the ball to the speed;
-  public void update() {
+  private void update() {
     ballX+=speedX;
     ballY+=speedY;
   }
-  public void move(int X, int Y) {
+  private void move(int X, int Y) {
     ballX = X;
     ballY = Y;
     speedY= 4;
@@ -70,7 +70,7 @@ public class Ball extends PApplet {
   }
   
   //this does the bounce
-  public boolean checkWallCollision() {
+  private boolean checkWallCollision() {
     if (ballX>widthD-ballWidth/2) {
         speedX=-abs(speedX); 
     } else if (ballX<ballWidth/2) {
